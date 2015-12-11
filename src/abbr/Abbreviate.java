@@ -9,8 +9,7 @@ public class Abbreviate {
      * lower case, removed.  Other characters are unmodified.
      */
     public static String abbreviate(String string) {
-        // TODO: Write this method.
-        return null;
+        return string.replaceAll("[aeiouAEIOU]", "");
     }
 
     public static void main(String[] args) {

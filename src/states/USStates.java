@@ -1,5 +1,6 @@
 package states;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class USStates {
@@ -16,7 +17,17 @@ public class USStates {
      */
     public static Map<Character, Integer> countStatesByFirstLetter() {
         // TODO: Write this method.
-        return null;
+        Map<Character, Integer> stateMap = new HashMap<Character, Integer>();
+        for (int i = 65; i < 91; i++) {
+            stateMap.put((char) i, 0);
+        }
+
+        for (int i = 0; i < STATE_NAMES.length; i++) {
+            Character c = STATE_NAMES[i].charAt(0);
+            Integer count = stateMap.get(c);
+            stateMap.put(c, count + 1);
+        }
+        return stateMap;
     }
 
     public static void main(String[] args) {
